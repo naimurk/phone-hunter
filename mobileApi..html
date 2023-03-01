@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.2/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Phones</title>
+
+</head>
+
+<body>
+    <header class="my-12">
+        <h1 class="text-5xl text-center text-slate-100">welcome to phone hunter</h1>
+    </header>
+    <main>
+        <section class="px-28">
+                 <div class="text-center my-12">
+                    <input value="iphone" id="input-value" type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs" />
+                    <button id="btn" onclick="loadData()" class="btn btn-active btn-secondary mx-2">Search</button>
+
+                 </div>
+                 <div class="text-center hidden" id="loading">
+                    <progress class="progress progress-info w-56"></progress>
+                 </div>
+                 <div id="phone-container" class="grid grid-cols-3 justify-center">
+
+                 </div>
+                 <div>
+                    <h1 id="noFound" class="text-warning text-center hidden">No phone found</h1>
+                 </div>
+                
+                 <div class="text-center my-12 hidden" id="show-all">
+                    <button onclick="showAll()" id="show-all-btn" class=" text-center btn btn-active btn-secondary mx-2">Show All</button>
+                 </div>
+                <!-- modal -->
+                <div id="">
+
+                    <div class="fixed z-10 overflow-y-auto top-0 w-full left-0 hidden" id="modal">
+                        <div class="flex items-center justify-center min-height-100vh pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+                          <div class="fixed inset-0 transition-opacity">
+                            <div class="absolute inset-0 bg-gray-900 opacity-75" />
+                          </div>
+                          <span class="hidden sm:inline-block sm:align-middle sm:h-screen">&#8203;</span>
+                          <div class="inline-block align-center bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full" role="dialog" aria-modal="true" aria-labelledby="modal-headline">
+                            <div id="modal-container" class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                             
+                            </div>
+                            <div class="bg-gray-200 px-4 py-3 text-right">
+                              <button type="button" class="py-2 px-4 bg-gray-500 text-white rounded hover:bg-gray-700 mr-2" onclick="phoneDetails()"><i class="fas fa-times"></i> Cancel</button>
+                             
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+        </section>
+    </main>
+
+   
+    <script src="./js/mbl.js"></script>
+</body>
+
+</html>
